@@ -1,5 +1,4 @@
 //리팩토링 => 결과물은 같으나 코드만 달라지는 경우
-$url: "https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images";
 body {
   height: 100vh;
   background-image: url("#{$url}/bg.jpg");
@@ -13,13 +12,13 @@ body {
 
 .container {
   padding: 50px 0;
-  .heroes  {
+  .heroes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 700px;
     margin: 0 auto;
-    padding: 40px 20px; 
+    padding: 40px 20px;
     .hero {
       width: 80px;
       height: 84px;
@@ -30,9 +29,7 @@ body {
       box-sizing: border-box;
       overflow: hidden;
       transform: skewX(-14deg);
-      transition: 
-        transform 0.1s, 
-        background-color .6s;
+      transition: transform 0.1s, background-color 0.6s;
       &:hover {
         background-color: #ff9c00;
         transform: skewX(-14deg) scale(1.3);
@@ -44,11 +41,11 @@ body {
         background-position: center;
         background-size: 90px;
         background-repeat: no-repeat;
-        transform: skewX(14deg) translateX(-16px); 
+        transform: skewX(14deg) translateX(-16px);
         /* margin에 auto값을 주기 위해서는 반드시 block요소여야 하고 width값이 있어야 한다. 위 아래에는 auto 넣을 필요 없이 브라우저에서 잘 넣어달라는 의미에 0을 넣는다*/
         /* 이미 부모 요소에서 skewX가 있어서 이미지도 기울어짐. 이미지는 정상적인 화면으로 연출하기 위해 반대로 14deg를 부여함 */
       }
-      
+
       @for $i from 1 through 32 {
         // .hero
         &:nth-child(#{$i}) .image {
@@ -64,6 +61,5 @@ body {
     img {
       width: 100%;
     }
-  }  
+  }
 }
-
